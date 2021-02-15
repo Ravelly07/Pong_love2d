@@ -52,7 +52,7 @@ function love.load()
 	sonidoCollisions = love.audio.newSource("collision.wav","static")
 	sonidoMisService = love.audio.newSource("misservice.wav","static")
 	sonidoWinning = love.audio.newSource("winning.wav","static")
-	
+	bgmusic = love.audio.newSource("8Bits.mp3","stream")
 end
 
 function love.keypressed(key)
@@ -216,6 +216,8 @@ end
 
 function love.draw()
 	love.graphics.draw(bg, 0, 0, 0, 1.25)
+	bgmusic:setVolume(0.25)
+	bgmusic:play()
 	push:apply("start")
 	
 	--draw here
